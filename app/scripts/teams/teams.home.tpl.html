@@ -11,6 +11,9 @@
 <hr>
 <h4>Add New Team</h4>
 <form ng-submit="addTeam(team)">
-  <input ng-model="team.name" type="text" placeholder="List Title">
+  <input ng-model="team.name" type="text" placeholder="Team Name">
+  <input ng-model="team.sport" type="text" placeholder="Sport">
+  <input ng-model="team.coach" type="text" placeholder="Coach Name">
+  <input ng-model="team.homefield" type="text" placeholder="Home Field">
   <button>Add Team</button>
 </form>

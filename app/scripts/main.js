@@ -21,15 +21,15 @@ angular.module('STM', ['ngRoute', 'ngCookies', 'User'])
 
 		$routeProvider
 
-		// .when('/', {
-		// 	templateUrl: 'scripts/teams/teams.home.tpl.html',
-		// 	controller: 'PostsController'
-		// })
+		.when('/', {
+			templateUrl: 'scripts/teams/teams.home.tpl.html',
+			controller: 'TeamCtrl'
+		})
 
-		// .when('/add', {
-		// 	templateUrl: 'scripts/posts/addPost.tpl.html',
-		// 	controller: 'PostsController',
-		// })
+		.when('/addPlayer', {
+			templateUrl: 'scripts/players/players.list.tpl.html',
+			controller: 'PlayersCtrl',
+		})
 
 		// .when('/edit', {
 		// 	templateUrl: 'scripts/posts/editPost.tpl.html',

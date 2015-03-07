@@ -11,10 +11,10 @@
       var user = UserFactory.user();
 
       var getAllTeams = function () {
-        return $http.get(PARSE.URL + 'classes/Teams', {
-          headers: PARSE.CONFIG.headers,
-          cache: true
-        });
+        // return $http.get(PARSE.URL + 'classes/Teams', {
+        //   headers: PARSE.CONFIG.headers,
+        //   cache: true
+        // });
       };
 
       var addTeam = function (teamObj) {
@@ -32,9 +32,9 @@
           'write' : true
         }
 
-        listObj.ACL = ACLObj;
+        teamObj.ACL = ACLObj;
 
-        return $http.post(PARSE.URL + 'classes/Teams', listObj);
+        return $http.post(PARSE.URL + 'classes/Teams', teamObj);
       };
 
       var deleteTeam = function (id) {

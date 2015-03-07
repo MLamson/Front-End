@@ -1,0 +1,13 @@
+<h2>{{ team.name }}</h2>
+  <ul class="players">
+    <li ng-repeat="i in items">{{ p.name }} <span>X</span></li>
+  </ul>
+<hr>
+<h4>Add New Player</h4>
+<form ng-submit="addPlayer(player)">
+  <input ng-model="player.name" type="text" placeholder="Player Name">
+  <input ng-model="player.parentOne" type="text" placeholder="Parent Name">
+  <input ng-model="player.parentTwo" type="text" placeholder="Parent Name">
+  <input ng-model="player.team" type="text" placeholder="Team Name">
+  <button>Add Player</button>
+</form>

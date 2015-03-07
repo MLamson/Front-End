@@ -35,12 +35,8 @@
       // Log in a User
       var loginUser = function (userObj) {
 
-        $http({
-          method: 'GET',
-          url: PARSE.URL + 'users',
-          headers: PARSE.CONFIG.headers,
-          params: userObj
-        }).then (function (res) {
+        $http.post(PARSE.URL + 'users/sign_in', {user: userObj})
+          .then (function (res) {
           console.log(res);
           $cookieStore.put('currentUser', res.data);
           $location.path('/');

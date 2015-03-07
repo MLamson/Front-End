@@ -4,24 +4,24 @@
 
   angular.module('STM')
 
-  .controller('ListCtrl', ['$scope', 'ListsFactory', '$cacheFactory',
+  .controller('TeamCtrl', ['$scope', '$cacheFactory',  'TeamsFactory',
 
-    function ($scope, ListsFactory, $cacheFactory) {
+    function ($scope, $cacheFactory, TeamsFactory) {
 
       var cache = $cacheFactory.get('$http');
 
       $scope.teams = [];
 
-      TeamsFactory.get().success( function (response) {
-        $scope.teams = response.results;
-      });
+      // TeamsFactory.get().success( function (response) {
+      //   $scope.teams = response.results;
+      // });
     
-      $scope.addTeam = function (listObj) {
+      $scope.addTeam = function (teamObj) {
         $scope.team = {};
         TeamsFactory.add(teamObj).success( function (results) {
-          teamObj.objectId = results.objectId;
-          $scope.teams.push(teamObj);
-          cache.remove('https://api.parse.com/1/classes/Lists');
+          // teamObj.objectId = results.objectId;
+          // $scope.teams.push(teamObj);
+          // cache.remove('https://api.parse.com/1/classes/Lists');
         });
       };
 

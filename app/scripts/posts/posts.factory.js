@@ -1,6 +1,6 @@
 ;(function (){
 
-  angular.module('Posts')
+  angular.module('STM')
 
     .factory('PostsFactory', ['$http', '$rootScope', 'PARSE', 'UserFactory',
       function ($http, $rootScope, PARSE, UserFactory) {
@@ -42,7 +42,7 @@
         ///////////////
         ///////////////
 
-        $http.post(PARSE.URL + 'classes/Posts', postObj, PARSE.CONFIG)
+        $http.post(PARSE.URL, postObj, PARSE.CONFIG)
           .success( function () {
             $rootScope.$broadcast('post:added');
           }
@@ -53,7 +53,7 @@
       var removePost = function (obj) {
         // console.log('inside remvoepost');
         // console.log(obj);
-        $http.delete(PARSE.URL + 'classes/Posts/' + obj.objectId, PARSE.CONFIG)
+        $http.delete(PARSE.URL + obj.objectId, PARSE.CONFIG)
           .success( function () {
             $rootScope.$broadcast('post:removed');
 
@@ -62,7 +62,7 @@
       } ;
 
       var editPosts = function (obj) {
-         return $http.get(PARSE.URL + 'classes/Posts' + obj.objectId, PARSE.CONFIG);
+         return $http.get(PARSE.URL + obj.objectId, PARSE.CONFIG);
       };
 
       // var updatePosts = function (obj) {
