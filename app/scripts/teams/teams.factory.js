@@ -23,14 +23,14 @@
           __type: 'Pointer',
           className: '_User',
           objectId: user.objectId
-        }
+        };
 
         // Set up Access Control
         var ACLObj = {};
         ACLObj[user.objectId] = {
           'read' : true,
           'write' : true
-        }
+        };
 
         teamObj.ACL = ACLObj;
 

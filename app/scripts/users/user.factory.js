@@ -10,16 +10,16 @@
     
       // Get Current User
       var currentUser = function () {
-        return $cookieStore.get('currentUser');
+        return $cookieStore.get('authentication_token');
       };
 
       // Check User Status
       var checkLoginStatus = function () {
         var user = currentUser();
-        // if (user) {
-        //   PARSE.CONFIG.headers['X-PARSE-Session-Token'] = user.sessionToken;
-        //   console.log('in checkLoginStatus');
-        // }
+        if (user) {
+          PARSE.CONFIG.headers['X-PARSE-Session-Token'] = user.sessionToken;
+          console.log('in checkLoginStatus');
+        }
       };
 
       // Add a new User
@@ -36,9 +36,11 @@
       var loginUser = function (userObj) {
 
         $http.post(PARSE.URL + 'users/sign_in', {user: userObj})
-          .then (function (res) {
-          console.log(res);
-          $cookieStore.put('currentUser', res.data);
+          .success (function (res) {
+            console.log(res);
+          console.log(res.user.authentication_token);
+          $cookieStore.put('authentication_token', res.user.authentication_token);
+
           $location.path('/');
         });
         

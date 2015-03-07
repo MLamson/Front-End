@@ -2,5 +2,12 @@
 <form ng-submit="registerUser(user)">
   <input ng-model="user.email" type="email" placeholder="Email">
   <input ng-model="user.password" type="password" placeholder="Password">
+  <select>
+	 	<option Value="Please Choose Role.">Please Choose Role.</option>
+	  <option value="volvo">Manager</option>
+	  <option value="saab">Coach</option>
+	  <option value="mercedes">Parent</option>
+	  <option value="audi">Player</option>
+	 </select>
   <button>Register</button>
 </form>
