@@ -2,7 +2,7 @@
   
   'use strict';
 
-  angular.module('Posts')
+  angular.module('STM')
 
   .controller('NavCtrl', ['$scope', 'UserFactory', 
 

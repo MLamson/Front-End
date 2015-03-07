@@ -17,6 +17,8 @@
       // Add a new user
       $scope.registerUser = function (userObj) {
         UserFactory.register(userObj);
+        console.log('registerusercontroller', userObj);
+        $location.path('/')
       };
 
       // Login Method

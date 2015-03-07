@@ -1,6 +1,6 @@
 ;(function (){
 
-  angular.module('Posts')
+  angular.module('STM')
 
     .controller('PostsController', ['$scope', 'PostsFactory', '$rootScope', '$location',
 

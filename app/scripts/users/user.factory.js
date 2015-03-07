@@ -16,17 +16,18 @@
       // Check User Status
       var checkLoginStatus = function () {
         var user = currentUser();
-        if (user) {
-          PARSE.CONFIG.headers['X-PARSE-Session-Token'] = user.sessionToken;
-          console.log('in checkLoginStatus');
-        }
+        // if (user) {
+        //   PARSE.CONFIG.headers['X-PARSE-Session-Token'] = user.sessionToken;
+        //   console.log('in checkLoginStatus');
+        // }
       };
 
       // Add a new User
       var addUser = function (userObj) {
-        $http.post(PARSE.URL + 'users', userObj, PARSE.CONFIG)
+        $http.post(PARSE.URL + 'users', {user: userObj})
           .then( function (res) {
             console.log(res);
+
           }
         );
       };
@@ -36,7 +37,7 @@
 
         $http({
           method: 'GET',
-          url: PARSE.URL + 'login',
+          url: PARSE.URL + 'users',
           headers: PARSE.CONFIG.headers,
           params: userObj
         }).then (function (res) {

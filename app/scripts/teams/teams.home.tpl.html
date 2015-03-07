@@ -1,0 +1,16 @@
+<h2>Your Teams</h2>
+
+<input type="text" ng-model="searchtext" placeholder="Filter">
+
+<hr>
+<ul class="teams">
+  <li ng-repeat="l in lists | filter:searchtext | orderBy: 'name' "><a href="#/teams/{{ t.objectId }}">{{ l.title }}</a> <span ng-click="deleteMe(t.objectId, $index)">X</span></li>  
+</ul>
+
+
+<hr>
+<h4>Add New Team</h4>
+<form ng-submit="addTeam(team)">
+  <input ng-model="team.name" type="text" placeholder="List Title">
+  <button>Add Team</button>
+</form>
