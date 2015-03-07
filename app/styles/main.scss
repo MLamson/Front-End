@@ -1,3 +1,6 @@
+ // Bourbon & Neat
+@import '../../bower_components/bourbon/dist/bourbon';
+@import '../../bower_components/neat/app/assets/stylesheets/neat';
 
 // Custom Styles
 body {
@@ -8,7 +11,7 @@ body {
 
 .hero-unit {
   margin: 50px auto 0 auto;
-  width: 600px;
+  width: 800px;
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
@@ -21,3 +24,31 @@ body {
     letter-spacing: -1px;
   }
 }
+.postNoteArea {
+  list-style: none;
+}
+.noteBox {
+  float:left;
+  padding:5px;
+  margin: 5px;
+  width:150px;
+  height: auto;
+  background-color:lightyellow;
+  border: 2px solid lightblue;
+  border-radius: 3px;
+  font-size: 12px;
+  .noteTitle {
+    border-bottom: 2px solid darkblue;
+    font-size: 16px;
+  }
+  .deleteNoteButton {
+    width: 66px;
+    line-height: 8px;
+    font-size: 9px;
+  }
+  .editNoteButton {
+    width: 66px;
+    line-height: 8px;
+    font-size: 9px;
+  }
+}//close .noteBox
